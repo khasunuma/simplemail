@@ -5,7 +5,7 @@ import javax.mail.MessagingException;
 /**
  * Exception thrown when some error occurred.
  * 
- * @author Yumi Hiraoka
+ * @author Yumi Hiraoka - yumix at outlook.com
  *
  */
 public class MailException extends RuntimeException {
