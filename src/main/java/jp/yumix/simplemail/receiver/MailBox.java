@@ -46,8 +46,12 @@ public class MailBox implements AutoCloseable {
     }
 
     @Override
-    public void close() throws Exception {
-        store.close();
+    public void close() {
+        try {
+			store.close();
+		} catch (MessagingException e) {
+            throw new MailReceiverException(e);
+		}
     }
 
     public MailFolder folder(String folderName) {

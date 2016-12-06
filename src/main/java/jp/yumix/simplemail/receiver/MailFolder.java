@@ -87,8 +87,12 @@ public class MailFolder implements AutoCloseable {
      * @see java.lang.AutoCloseable#close()
      */
     @Override
-    public void close() throws Exception {
-        folder.close(false);
+    public void close() {
+        try {
+			folder.close(false);
+		} catch (MessagingException e) {
+            throw new MailReceiverException(e);
+		}
     }
 
     /**
@@ -124,4 +128,13 @@ public class MailFolder implements AutoCloseable {
             throw new MailReceiverException(e);
         }
     }
+    
+    public int count() {
+    	try {
+			return folder.getMessageCount();
+		} catch (MessagingException e) {
+            throw new MailReceiverException(e);
+		}
+    }
+    
 }
