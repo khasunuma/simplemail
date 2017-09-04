@@ -25,7 +25,7 @@ public class OutlookProviderTest {
         System.clearProperty("mail.from");
         System.clearProperty("mail.user");
         System.clearProperty("mail.password");
-        
+
         if (OutlookProviderTest.class.getResource(propFileURL) != null) {
             Properties props = new Properties();
             props.load(OutlookProviderTest.class.getResourceAsStream(propFileURL));

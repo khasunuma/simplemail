@@ -23,7 +23,7 @@ public class ICloudMailTest {
         System.clearProperty("mail.user");
         System.clearProperty("mail.password");
         System.clearProperty("mail.to");
-        
+
         if (ICloudProviderTest.class.getResource(propFileURL) != null) {
             Properties props = new Properties();
             props.load(GmailProviderTest.class.getResourceAsStream(propFileURL));
@@ -38,7 +38,7 @@ public class ICloudMailTest {
     public void testSend() {
         String from = System.getProperty("mail.from");
         String to = System.getProperty("mail.to");
-        
+
         SessionProvider provider = new ICloudProvider();
         Session session = provider.getSession();
         Mail.from(from).to(to).subject("テスト Mail です").message("ライブラリ SimpleMail のテストです。").send(session);

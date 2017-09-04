@@ -25,7 +25,7 @@ public class ICloudProviderTest {
         System.clearProperty("mail.from");
         System.clearProperty("mail.user");
         System.clearProperty("mail.password");
-        
+
         if (ICloudProviderTest.class.getResource(propFileURL) != null) {
             Properties props = new Properties();
             props.load(GmailProviderTest.class.getResourceAsStream(propFileURL));

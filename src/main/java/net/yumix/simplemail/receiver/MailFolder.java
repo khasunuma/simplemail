@@ -89,10 +89,10 @@ public class MailFolder implements AutoCloseable {
     @Override
     public void close() {
         try {
-			folder.close(false);
-		} catch (MessagingException e) {
+            folder.close(false);
+        } catch (MessagingException e) {
             throw new MailReceiverException(e);
-		}
+	}
     }
 
     /**
@@ -131,10 +131,10 @@ public class MailFolder implements AutoCloseable {
     
     public int count() {
     	try {
-			return folder.getMessageCount();
-		} catch (MessagingException e) {
+    	    return folder.getMessageCount();
+    	} catch (MessagingException e) {
             throw new MailReceiverException(e);
-		}
+	}
     }
     
 }

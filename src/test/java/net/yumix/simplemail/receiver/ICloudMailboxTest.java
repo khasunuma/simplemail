@@ -18,13 +18,13 @@ public class ICloudMailboxTest {
 
     private static final String PROP_FILE_URL = "/testuser.icloud.properties";
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+    @BeforeClass
+    public static void setUpBeforeClass() throws Exception {
         System.clearProperty("mail.from");
         System.clearProperty("mail.user");
         System.clearProperty("mail.password");
         System.clearProperty("mail.to");
-        
+
         Properties props = new Properties();
         try (InputStream in = ICloudMailboxTest.class.getResourceAsStream(PROP_FILE_URL)) {
             props.load(in);
@@ -33,20 +33,20 @@ public class ICloudMailboxTest {
             System.err.printf("%s=%s\n", propName, props.getProperty(propName));
             System.setProperty(propName, props.getProperty(propName));
         }
-	}
+    }
 
-	@Test
-	public void test() {
-		SessionProvider provider = new ICloudProvider();
-		Session session = provider.getSession();
-		session.setDebug(true);
-		
+    @Test
+    public void test() {
+        SessionProvider provider = new ICloudProvider();
+        Session session = provider.getSession();
+        session.setDebug(true);
+
         try (MailBox mailbox = new MailBox(session)) {
-	        try (MailFolder inbox = mailbox.inbox()) {
-	        	System.out.println("Count: " + inbox.count());
-	        	inbox.listMessages(new PlainMessageDecoder()).forEach(System.out::println);
-	        }
+            try (MailFolder inbox = mailbox.inbox()) {
+                System.out.println("Count: " + inbox.count());
+                inbox.listMessages(new PlainMessageDecoder()).forEach(System.out::println);
+            }
         }
-	}
+    }
 
 }
