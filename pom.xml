@@ -2,46 +2,78 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.yumix</groupId>
   <artifactId>simplemail</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.9.0-SNAPSHOT</version>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
   </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>jakarta.mail</artifactId>
+      <version>2.0.0-RC4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-all</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- dependency>
+      <groupId>com.icegreen</groupId>
+      <artifactId>greenmail</artifactId>
+      <version>1.5.13</version>
+      <scope>test</scope>
+    </dependency -->
+  </dependencies>
+  
   <build>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <encoding>UTF-8</encoding>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
+        <version>3.8.1</version>
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-    <dependency>
-      <groupId>javax.mail</groupId>
-      <artifactId>javax.mail-api</artifactId>
-      <version>1.6.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.sun.mail</groupId>
-      <artifactId>javax.mail</artifactId>
-      <version>1.6.0</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest-core</artifactId>
-      <version>1.3</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  
+  <name>Simple Mail Library</name>
+  <description>A wrapper for Jakarta Mail (ex. JavaMail) API.</description>
+  <url>https://github.com/yumix/simplemail</url>
+  <inceptionYear>2020</inceptionYear>
+  
+  <licenses>
+    <license>
+      <name>BSD 2-Clause "Simplified" License</name>
+      <url>https://github.com/yumix/simplemail/blob/master/LICENSE</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <organization>
+    <name>yumix.net</name>
+    <url>https://www.yumix.net/</url>
+  </organization>
+  
+  <developers>
+    <developer>
+      <id>yumix</id>
+      <name>Yumi Hiraoka</name>
+      <email>yumix@outlook.com</email>
+    </developer>
+  </developers>
+  
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/yumix/simplemail/issues</url>
+  </issueManagement>
+  
+  <scm>
+    <url>https://github.com/yumix/simplemail</url>
+    <connection>scm:git:https://github.com/yumix/simplemail.git</connection>
+    <developerConnection>scm:git:https://github.com/yumix/simplemail.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
 </project>
