@@ -13,3 +13,8 @@ hs_err_pid*
 /bin/
 /target/
 /private/
+
+# Eclipse Workspace Files #
+/.settings/
+.project
+.classpath
